@@ -1,0 +1,21 @@
+<div class= "navbar-lewagon d-flex p-3">
+<i class="fa-solid fa-film"></i>
+<div>
+<%= link_to "My lists", lists_path %>
+<%= link_to "New list", new_list_path %>
+</div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.hellozurich.ch/cms/upload/08_Aktuell_21/1170_Bauten_Kino/Teaser/hellozurich_kino_1.jpg)">
+  Save any kind of movies
+</div>
+
+<div class = "container">
+<h1>All my lists</h1>
+<div class="cards">
+<% @lists.each do |list| %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUy3BKl2zx3Zyge6WL4VPjyUpJsKOC3cdr5Q&usqp=CAU)"><%= link_to list.name, list_path(list) %></div>
+<% end %>
+<%= link_to "Add a new list", new_list_path, :class => "card-category" %>
+</div>
+</div>

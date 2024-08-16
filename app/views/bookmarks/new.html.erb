@@ -1,0 +1,14 @@
+<div class= "navbar-lewagon d-flex p-3">
+<i class="fa-solid fa-film"></i>
+<div>
+<%= link_to "My lists", lists_path %>
+<%= link_to "New list", new_list_path %>
+</div>
+</div>
+
+<h2>Add a new bookmark</h2>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+<%= f.association :movie %>
+<%= f.input :comment %>
+<%= f.button :submit, :class => "btn btn-primary" %>
+<% end %>
